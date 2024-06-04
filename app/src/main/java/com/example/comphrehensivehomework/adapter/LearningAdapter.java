@@ -58,48 +58,5 @@ public class LearningAdapter extends BaseAdapter {
         textContent.setText(item.getContent());
 
         return convertView;
-//        ViewHolder viewHolder;
-//
-//        if (convertView == null) {
-//            viewHolder = new ViewHolder();
-//            LayoutInflater inflater = LayoutInflater.from(context);
-//            convertView = inflater.inflate(R.layout.fragment_learning, null, true);
-//            viewHolder.imageView = convertView.findViewById(R.id.imageView);
-//            viewHolder.textTitle = convertView.findViewById(R.id.textViewTitle);
-//            viewHolder.textContent = convertView.findViewById(R.id.textViewContent);
-//            convertView.setTag(viewHolder);
-//        } else {
-//            viewHolder = (ViewHolder) convertView.getTag();
-//        }
-//
-//        LearningItem learningDetail = learningDetails.get(position);
-//
-//        if (learningDetail != null) {
-//            int learningImageId = learningDetail.getImageId();
-//            String learningTitle = learningDetail.getTitle();
-//            String learningContent = learningDetail.getContent();
-//
-//            // Add log statements before setting views
-//            Log.d("LearningAdapter", "ImageId: " + learningImageId);
-//            Log.d("LearningAdapter", "Title: " + learningTitle);
-//            Log.d("LearningAdapter", "Content: " + learningContent);
-//
-//            viewHolder.imageView.setImageResource(learningImageId);
-//            viewHolder.textTitle.setText(learningTitle);
-//            viewHolder.textContent.setText(learningContent);
-//
-//        } else {
-//            // Handle case where image is not available (optional: set default image)
-//            Log.w("LearningAdapter", "Learning Adapter is null at : "+ position );
-//        }
-//
-//        return convertView;
     }
-
-//    class ViewHolder {
-//        private ImageView imageView;
-//        private TextView textTitle;
-//        private TextView textContent;
-//    }
-
 }

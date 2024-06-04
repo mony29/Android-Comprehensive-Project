@@ -4,10 +4,12 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -81,16 +83,34 @@ public class LearningFragment extends Fragment {
 
         list = new ArrayList<>();
 
-        list.add(new LearningItem(R.drawable.coding,"Title 1", "Content 1"));
-        list.add(new LearningItem(R.drawable.coding,"Title 2", "Content 2"));
-        list.add(new LearningItem(R.drawable.coding,"Title 3", "Content 3"));
+        list.add(new LearningItem(R.drawable.coding, "Title 1", "Content 1"));
+        list.add(new LearningItem(R.drawable.coding, "Title 2", "Content 2"));
+        list.add(new LearningItem(R.drawable.coding, "Title 3", "Content 3"));
 
-        if(list.isEmpty()){
+        if (list.isEmpty()) {
             Toast.makeText(getActivity(), "No data", Toast.LENGTH_LONG).show();
         }
 
         LearningAdapter adapter = new LearningAdapter(getActivity(), list);
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                LearningItem clickedItem = list.get(position);
+
+                Toast.makeText(getActivity(), "Clicked on : " + clickedItem.getTitle(), Toast.LENGTH_SHORT).show();
+
+//                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+//                ItemDetailFragment itemDetailFragment = ItemDetailFragment.newInstance(clickedItem);
+//                transaction.replace(R.id.main, itemDetailFragment);
+////                ItemDetailFragment itemDetailFragment = ItemDetailFragment.newInstance(clickedItem);
+////                transaction.replace(R.id.container, itemDetailFragment);
+//                transaction.addToBackStack(null);
+//                transaction.commit();
+            }
+        });
 
         return view;
     }
