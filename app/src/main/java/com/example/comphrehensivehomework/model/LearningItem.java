@@ -1,11 +1,11 @@
 package com.example.comphrehensivehomework.model;
 
-public class LearningDetails {
+public class LearningItem {
     private Integer imageId;
     private String title;
     private String content;
 
-    public LearningDetails() {
+    public LearningItem() {
     }
 
     public Integer getImageId() {
@@ -32,7 +32,7 @@ public class LearningDetails {
         this.content = content;
     }
 
-    public LearningDetails(Integer imageId, String title, String content) {
+    public LearningItem(Integer imageId, String title, String content) {
         this.imageId = imageId;
         this.title = title;
         this.content = content;

@@ -9,30 +9,30 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.comphrehensivehomework.R;
-import com.example.comphrehensivehomework.model.LearningDetails;
+import com.example.comphrehensivehomework.model.LearningItem;
 
 import java.util.List;
 
 public class LearningAdapter extends BaseAdapter {
     private Context context;
-    private List<LearningDetails> learningDetails;
+    private List<LearningItem> items;
 
-    public LearningAdapter(Context context, List<LearningDetails> learningDetails) {
+    public LearningAdapter(Context context, List<LearningItem> items) {
         this.context = context;
-        this.learningDetails = learningDetails;
+        this.items = items;
     }
 
     @Override
     public int getCount() {
-        if (learningDetails == null) {
+        if (items == null) {
             return 0;
         }
-        return learningDetails.size();
+        return items.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return learningDetails.get(position);
+        return items.get(position);
     }
 
     @Override
@@ -51,7 +51,7 @@ public class LearningAdapter extends BaseAdapter {
         TextView textTitle = convertView.findViewById(R.id.textViewTitle);
         TextView textContent = convertView.findViewById(R.id.textViewContent);
 
-        LearningDetails item = learningDetails.get(position);
+        LearningItem item = items.get(position);
 
         imageView.setImageResource(item.getImageId());
         textTitle.setText(item.getTitle());
@@ -72,7 +72,7 @@ public class LearningAdapter extends BaseAdapter {
 //            viewHolder = (ViewHolder) convertView.getTag();
 //        }
 //
-//        LearningDetails learningDetail = learningDetails.get(position);
+//        LearningItem learningDetail = learningDetails.get(position);
 //
 //        if (learningDetail != null) {
 //            int learningImageId = learningDetail.getImageId();

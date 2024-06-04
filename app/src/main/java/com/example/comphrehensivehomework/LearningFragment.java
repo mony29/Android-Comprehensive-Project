@@ -12,7 +12,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.comphrehensivehomework.adapter.LearningAdapter;
-import com.example.comphrehensivehomework.model.LearningDetails;
+import com.example.comphrehensivehomework.model.LearningItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +25,7 @@ import java.util.List;
 public class LearningFragment extends Fragment {
 
     private ListView listView;
-    private List<LearningDetails> list;
+    private List<LearningItem> list;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -81,9 +81,9 @@ public class LearningFragment extends Fragment {
 
         list = new ArrayList<>();
 
-        list.add(new LearningDetails(R.drawable.coding,"Title 1", "Content 1"));
-        list.add(new LearningDetails(R.drawable.coding,"Title 2", "Content 2"));
-        list.add(new LearningDetails(R.drawable.coding,"Title 3", "Content 3"));
+        list.add(new LearningItem(R.drawable.coding,"Title 1", "Content 1"));
+        list.add(new LearningItem(R.drawable.coding,"Title 2", "Content 2"));
+        list.add(new LearningItem(R.drawable.coding,"Title 3", "Content 3"));
 
         if(list.isEmpty()){
             Toast.makeText(getActivity(), "No data", Toast.LENGTH_LONG).show();
