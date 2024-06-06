@@ -1,11 +1,13 @@
 package com.example.comphrehensivehomework;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,56 +21,9 @@ import com.example.comphrehensivehomework.model.LearningItem;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link LearningFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class LearningFragment extends Fragment {
-
     private ListView listView;
     private List<LearningItem> list;
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public LearningFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment LearningFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static LearningFragment newInstance(String param1, String param2) {
-        LearningFragment fragment = new LearningFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
     @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -84,11 +39,11 @@ public class LearningFragment extends Fragment {
         list = new ArrayList<>();
 
         list.add(new LearningItem(R.drawable.coding, "Title 1", "Content 1"));
-        list.add(new LearningItem(R.drawable.coding, "Title 2", "Content 2"));
+        list.add(new LearningItem(R.drawable.education, "Title 2", "Content 2"));
         list.add(new LearningItem(R.drawable.coding, "Title 3", "Content 3"));
 
         if (list.isEmpty()) {
-            Toast.makeText(getActivity(), "No data", Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), "No data", Toast.LENGTH_SHORT).show();
         }
 
         LearningAdapter adapter = new LearningAdapter(getActivity(), list);
@@ -102,11 +57,25 @@ public class LearningFragment extends Fragment {
 
                 Toast.makeText(getActivity(), "Clicked on : " + clickedItem.getTitle(), Toast.LENGTH_SHORT).show();
 
-//                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-//                ItemDetailFragment itemDetailFragment = ItemDetailFragment.newInstance(clickedItem);
-//                transaction.replace(R.id.main, itemDetailFragment);
-////                ItemDetailFragment itemDetailFragment = ItemDetailFragment.newInstance(clickedItem);
-////                transaction.replace(R.id.container, itemDetailFragment);
+                Intent intent = new Intent(getActivity(), LearningDetailActivity.class);
+
+                intent.putExtra("title", clickedItem.getTitle());
+                intent.putExtra("content", clickedItem.getContent());
+                intent.putExtra("imageId", clickedItem.getImageId());
+
+                startActivity(intent);
+//                the below code is working
+//                LearningDetailFragment detailFragment = new LearningDetailFragment();
+//
+//                Bundle bundle = new Bundle();
+//                bundle.putString("title", clickedItem.getTitle());
+//                bundle.putString("content", clickedItem.getContent());
+//                bundle.putInt("imageId", clickedItem.getImageId());
+//                detailFragment.setArguments(bundle);
+//
+//                FragmentTransaction transaction;
+//                transaction = getActivity().getSupportFragmentManager().beginTransaction();
+//                transaction.replace(R.id.fragment, detailFragment);
 //                transaction.addToBackStack(null);
 //                transaction.commit();
             }
