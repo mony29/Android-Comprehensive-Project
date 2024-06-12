@@ -4,4 +4,10 @@
     <color name="white">#FFFFFFFF</color>
     <color name="color_focused">#2196F3</color>
     <color name="color_unfocused">#D7DBDD</color>
+    
+    <declare-styleable name="item_view">
+        <attr name="show_bottom_line" format="boolean"/>
+        <attr name="show_left_img" format="integer"/>
+        <attr name="show_text" format="string"/>
+    </declare-styleable>
 </resources>

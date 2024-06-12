@@ -4,24 +4,27 @@
     <item
         android:id="@+id/home_fragment"
         android:enabled="true"
-        android:title="Home"
-        app:showAsAction="ifRoom" />
+        android:title="首页"
+        android:icon="@drawable/home" />
 
     <item
         android:id="@+id/learning_fragment"
         android:enabled="true"
-        android:title="Learning"
+        android:title="学习"
+        android:icon="@drawable/baseline_animation_24"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/video_fragment"
         android:enabled="true"
-        android:title="Video"
+        android:title="视频"
+        android:icon="@drawable/baseline_airplay_24"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/my_fragment"
         android:enabled="true"
-        android:title="About Me"
+        android:title="我的"
+        android:icon="@drawable/baseline_account_circle_24"
         app:showAsAction="ifRoom" />
 </menu>

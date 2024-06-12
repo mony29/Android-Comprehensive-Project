@@ -1,3 +1,5 @@
+import java.util.regex.Pattern.compile
+
 plugins {
     alias(libs.plugins.androidApplication)
 }
@@ -46,5 +48,20 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 
-    implementation ("com.google.android.material:material:1.12.0")
+    implementation("com.google.android.material:material:1.12.0")
+    // about me
+    // implementation ("com.github.bumptech.glide:glide:3.7.0")
+    // implementation ("jp.wasabeef:glide-transformations:2.0.1")
+
+
+// Application running failed when sync this dependencies
+//    //必须使用
+//    implementation ("com.lzy.net:okgo:3.0.4")
+//
+//    //以下三个选择添加，okrx和okrx2不能同时使用
+//    implementation("com.lzy.net:okrx:1.0.2")
+//    // implementation ("com.lzy.net:okrx2:2.0.2")
+//    implementation("com.lzy.net:okserver:2.0.5")
+
+    implementation ("com.android.volley:volley:1.2.1")
 }
