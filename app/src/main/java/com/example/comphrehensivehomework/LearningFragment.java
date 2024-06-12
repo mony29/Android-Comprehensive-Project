@@ -38,9 +38,9 @@ public class LearningFragment extends Fragment {
 
         list = new ArrayList<>();
 
-        list.add(new LearningItem(R.drawable.coding, "Title 1", "Content 1"));
-        list.add(new LearningItem(R.drawable.education, "Title 2", "Content 2"));
-        list.add(new LearningItem(R.drawable.coding, "Title 3", "Content 3"));
+        list.add(new LearningItem(R.drawable.education, "Android开发实践技术", "Content 1"));
+        list.add(new LearningItem(R.drawable.law, "Java Web", "Content 2"));
+        list.add(new LearningItem(R.drawable.bussiness, "Vue-JS 框架", "Content 3"));
 
         if (list.isEmpty()) {
             Toast.makeText(getActivity(), "No data", Toast.LENGTH_SHORT).show();
