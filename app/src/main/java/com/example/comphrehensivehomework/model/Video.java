@@ -4,14 +4,16 @@ public class Video {
     private String title;
     private String author;
     private String thumbnailUrl;
+    private String videoUrl;
 
-    public Video(String title, String author, String thumbnailUrl) {
+    public Video() {
+    }
+
+    public Video(String title, String author, String thumbnailUrl, String videoUrl) {
         this.title = title;
         this.author = author;
         this.thumbnailUrl = thumbnailUrl;
-    }
-
-    public Video() {
+        this.videoUrl = videoUrl;
     }
 
     public String getTitle() {
@@ -36,5 +38,13 @@ public class Video {
 
     public void setThumbnailUrl(String thumbnailUrl) {
         this.thumbnailUrl = thumbnailUrl;
+    }
+
+    public String getVideoUrl() {
+        return videoUrl;
+    }
+
+    public void setVideoUrl(String videoUrl) {
+        this.videoUrl = videoUrl;
     }
 }

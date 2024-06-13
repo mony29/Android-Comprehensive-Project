@@ -54,14 +54,14 @@ dependencies {
     // implementation ("jp.wasabeef:glide-transformations:2.0.1")
 
 
-// Application running failed when sync this dependencies
-//    //必须使用
-//    implementation ("com.lzy.net:okgo:3.0.4")
-//
-//    //以下三个选择添加，okrx和okrx2不能同时使用
-//    implementation("com.lzy.net:okrx:1.0.2")
-//    // implementation ("com.lzy.net:okrx2:2.0.2")
-//    implementation("com.lzy.net:okserver:2.0.5")
+    // Application running failed when sync this dependencies
+    // 必须使用
+    // implementation ("com.lzy.net:okgo:2.1.4")
+
+    // 以下三个选择添加，okrx和okrx2不能同时使用
+    // implementation("com.lzy.net:okrx:1.0.2")
+    // implementation ("com.lzy.net:okrx2:2.0.2")
+    // implementation("com.lzy.net:okserver:2.0.5")
 
     implementation ("com.android.volley:volley:1.2.1")
 }
